@@ -1,10 +1,10 @@
-#ifndef SHIELDBEARER_H;
-#define SHIELDBEARER_H;
+#ifndef SHIELDBEARER_H
+#define SHIELDBEARER_H
 
-#include "Soldiers.h";
+#include "Soldiers.h"
 #include <iostream>
 #include <string>
-#include <vector>
+#include <vector> 
 #include <map>
 #include <list>
 
@@ -19,8 +19,7 @@ class ShieldBearer: public Soldiers
        string  unitName; 
 
     public:
-      void info() const override;
-      ShieldBearer(int  damagePerSoldier , int defencePerSoldier);
+      ShieldBearer(int health, int damage, int amount, int defence, const string& name);
       Soldiers* clonis() override;
       ShieldBearer();
 

@@ -1,12 +1,12 @@
-#ifndef BOATMAN_H;
-#define BOATMAN_H;
+#ifndef BOATMAN_H
+#define BOATMAN_H
 
-#include "Soldiers.h";
+#include "Soldiers.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <map>
-#include <list>
+#include <list> 
 
 
 class Boatman: public Soldiers
@@ -19,8 +19,8 @@ class Boatman: public Soldiers
        string  unitName; 
 
     public:
-      void info() const override;
       Boatman();
+      Boatman(int health, int damage, int amount, int defence, const string& name);
       Soldiers* clonis();
 };
 #endif

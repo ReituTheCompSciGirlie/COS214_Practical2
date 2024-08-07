@@ -1,10 +1,10 @@
-#ifndef INFANTRY_H;
-#define INFANTRY_H;
+#ifndef INFANTRY_H
+#define INFANTRY_H
 
-#include "Soldiers.h";
+#include "Soldiers.h"
 #include <iostream>
 #include <string>
-#include <vector>
+#include <vector> 
 #include <map>
 #include <list>
 
@@ -19,10 +19,8 @@ class Infantry: public Soldiers
        string  unitName; 
 
     public:
-      void info() const override;
-      //Infantry(int healthPerSoldier, int damagePerSoldier,int amountOfSoldiersPerSoldier, int defencePerSoldier);
       Soldiers* clonis() override;
-      Infantry(int healthyPerSoldier, int defencePerSoldier);
+      Infantry(int health, int damage, int amount, int defence, const string &name);
       Infantry();
 };
 #endif

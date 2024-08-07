@@ -20,9 +20,9 @@ class Soldiers
        string  unitName;
 
     public:
-      virtual void info() const = 0; // Pure virtual function
-      virtual ~Soldiers();
-      Soldiers();
+      virtual ~Soldiers() = default;
+      Soldiers() = default;
+      Soldiers(int health, int damage, int amount, int defence, const string& name);
       
       int gethealthPerSoldier();
       int getdamagePerSoldier();
@@ -31,7 +31,7 @@ class Soldiers
       string  getunitName();
 
 
-      virtual Soldiers* clonis() = 0;
+      virtual Soldiers* clonis() = 0; // pure virtual so we can use it to clone
       
 };
 #endif;

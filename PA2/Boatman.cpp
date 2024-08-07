@@ -1,22 +1,24 @@
-#include "Boatman.h";
-#include "Soldiers.h";
+#include "Boatman.h"
+#include "Soldiers.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <map>
 #include <list>
 
- void Boatman ::info() const 
- {
-    cout << "Boatman soldier created.\n";
- }
+using namespace std;
 
- Boatman::Boatman() //find a way to create these to make it easier 
- {
-        healthPerSoldier = 80;
-        damagePerSoldier = 70;
-        defencePerSoldier = 20;
-        amountOfSoldiersPerUnit = 12;
-        unitName = "Boatman";
+Boatman:: Boatman() : Soldiers()
+{
+   cout << "Boatman soldier created.\n";
 }
 
+Boatman:: Boatman(int health, int damage, int amount, int defence, const string &name)
+    : Soldiers(health, damage, amount, defence, name)
+{
+}
+
+Soldiers* Boatman:: clonis() 
+{
+   return new Boatman(*this);
+}

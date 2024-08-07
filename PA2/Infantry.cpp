@@ -1,34 +1,17 @@
-#include "Infantry.h";
-#include "Soldiers.h";
+#include "Infantry.h"
+#include "Soldiers.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <map>
 #include <list>
 
- void Infantry::info() const 
- {
-    cout << "Infantry soldier created.\n";
- }
+Infantry:: Infantry() : Soldiers() {}
 
-//  Infantry:: Infantry(int healthPerSoldier, int damagePerSoldier,int amountOfSoldiersPerSoldier, int defencePerSoldier) 
-//  {
-//         this->healthPerSoldier = healthPerSoldier;
-//         this->damagePerSoldier = damagePerSoldier;
-//         this->amountOfSoldiersPerUnit = amountOfSoldiersPerUnit;
-//         this->defencePerSoldier = defencePerSoldier;
-//         this->unitName = unitName;
-// }
+Infantry:: Infantry(int health, int damage, int amount, int defence, const string &name)
+    : Soldiers(health, damage, amount, defence, name) {}
 
-Infantry :: Infantry(int healthyPerSoldier, int defencePerSoldier) 
+Soldiers* Infantry:: clonis() 
 {
-     this->healthPerSoldier  = healthPerSoldier;
-     this->defencePerSoldier = defencePerSoldier;
+   return new Infantry(*this);
 }
-
-Infantry::Infantry()
-{
-   
-}
-
-
