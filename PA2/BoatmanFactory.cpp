@@ -12,23 +12,23 @@
 
 Soldiers* BoatmanFactory :: createUnit() 
 {
-    return new Boatman;
+    return new Boatman(80, 70, 12, 20, "Boatman");
 }
 
-int BoatmanFactory::calculateTotalHealthPerUnit()  
+int BoatmanFactory::calculateTotalHealthPerUnit() const
 {
-    Boatman boatman;
+    Boatman boatman(80, 70, 12, 20, "Boatman");
     return boatman.gethealthPerSoldier() *  boatman.getamountOfSoldiersPerUnit();
 }
 
-int BoatmanFactory::calculateTotalDamagePerUnit()  
+int BoatmanFactory::calculateTotalDamagePerUnit() const
 {
-    Boatman boatman;
+    Boatman boatman(80, 70, 12, 20, "Boatman");
     return boatman.getdamagePerSoldier() * boatman.getamountOfSoldiersPerUnit();
 }
 
-int BoatmanFactory::calculateTotalDefencePerUnit() 
+int BoatmanFactory::calculateTotalDefencePerUnit() const
 {
-    Boatman boatman;
+    Boatman boatman(80, 70, 12, 20, "Boatman");
     return boatman.getdefencePerSoldier() * boatman.getamountOfSoldiersPerUnit();
 }

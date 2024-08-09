@@ -7,9 +7,9 @@
 #include <map>
 #include <list>
 
-#include "ShieldBearer.h";
-#include "SoldierFactory.h";
-#include "Soldiers.h";
+#include "ShieldBearer.h"
+#include "SoldierFactory.h"
+#include "Soldiers.h"
 
 
 class ShieldBearerFactory: public SoldierFactory

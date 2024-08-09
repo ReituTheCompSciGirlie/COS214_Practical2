@@ -1,13 +1,13 @@
-#ifndef BOATMANFACTORY_H;
-#define BOATMANFACTORY_H;
+#ifndef BOATMANFACTORY_H
+#define BOATMANFACTORY_H
 
 #include <iostream>
 #include <string>
 #include <vector>
 #include <map>
 #include <list>
-#include "SoldierFactory.h";
-#include "Boatman.h";
+#include "SoldierFactory.h"
+#include "Boatman.h"
 
 
 class Soldiers;
@@ -16,8 +16,9 @@ class BoatmanFactory: public SoldierFactory
 {
      public:
       Soldiers* createUnit();
-      int calculateTotalHealthPerUnit();
-      int calculateTotalDamagePerUnit();
-      int calculateTotalDefencePerUnit();  
+      int calculateTotalHealthPerUnit() const override;
+      int calculateTotalDamagePerUnit() const override;
+      int calculateTotalDefencePerUnit() const override;  
 };
-#endif;
+
+#endif /* BOATMANFACTORY_H */
