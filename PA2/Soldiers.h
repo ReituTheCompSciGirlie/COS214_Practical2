@@ -1,6 +1,7 @@
-#ifndef SOLDIERS_H;
-#define SOLDIERS_H;
+#ifndef SOLDIERS_H
+#define SOLDIERS_H
 
+#include "Memento.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,7 +9,6 @@
 #include <list>
 
 using namespace std;
-
 
 class Soldiers
 {
@@ -33,5 +33,8 @@ class Soldiers
 
       virtual Soldiers* clonis() = 0; // pure virtual so we can use it to clone
       
+      // The methods to help with the Memento design pattern
+      Memento* militusMemento() const;
+      void vivificaMemento(Memento* memento);
 };
 #endif;
