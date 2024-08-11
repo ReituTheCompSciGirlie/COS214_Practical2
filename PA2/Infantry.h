@@ -22,5 +22,13 @@ class Infantry: public Soldiers
       Soldiers* clonis() override;
       Infantry(int health, int damage, int amount, int defence, const string &name);
       Infantry();
+      Infantry(int healthPerSoldier, int defencePerSoldier);
+
+      void engage();
+      void disengage();
+      void prepare();
+      void execute();
+      void retreat();
+      void rest();
 };
 #endif

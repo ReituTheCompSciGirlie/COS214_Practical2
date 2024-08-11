@@ -10,18 +10,18 @@ Soldiers* ShieldBearerFactory::createUnit()
 
 int ShieldBearerFactory::calculateTotalHealthPerUnit()  
 {
-    ShieldBearer shieldBearer(100, 50, 10, 30, "ShieldBearer");
+    ShieldBearer shieldBearer;
     return shieldBearer.gethealthPerSoldier() * shieldBearer.getamountOfSoldiersPerUnit();
 }
 
 int ShieldBearerFactory::calculateTotalDamagePerUnit()  
 {
-    ShieldBearer shieldBearer(100, 50, 10, 30, "ShieldBearer");
+    ShieldBearer shieldBearer;
     return shieldBearer.getdamagePerSoldier() * shieldBearer.getamountOfSoldiersPerUnit();
 }
 
 int ShieldBearerFactory::calculateTotalDefencePerUnit() 
 {
-    ShieldBearer shieldBearer(100, 50, 10, 30, "ShieldBearer");
+    ShieldBearer shieldBearer;
     return shieldBearer.getdefencePerSoldier() * shieldBearer.getamountOfSoldiersPerUnit();
 }

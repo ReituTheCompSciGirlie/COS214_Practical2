@@ -12,24 +12,28 @@ Soldiers::Soldiers(int health, int damage, int amount, int defence, const string
 {
 }
 
-int Soldiers::gethealthPerSoldier()
+int Soldiers::gethealthPerSoldier() const 
 {
     return healthPerSoldier;
 }
 
-int Soldiers::getdamagePerSoldier()
+int Soldiers::getdamagePerSoldier() const
 {
     return damagePerSoldier;
 }
 
-int Soldiers::getamountOfSoldiersPerUnit()
+int Soldiers::getamountOfSoldiersPerUnit() const
 {
     return amountOfSoldiersPerUnit;
 }
 
-int Soldiers::getdefencePerSoldier()
+int Soldiers::getdefencePerSoldier() const
 {
     return defencePerSoldier;
+}
+
+std::string Soldiers::getunitName() const {
+    return unitName;
 }
 
 // The methods that should help with the Memento, design pattern
@@ -50,3 +54,71 @@ void Soldiers::vivificaMemento(Memento *memento)
         unitName = memento->getUnitName();
     }
 }
+
+void Soldiers::engage()
+{
+   prepare();
+   execute(); 
+}
+
+
+void Soldiers::disengage()
+{
+     retreat();
+     rest();
+}
+
+//These will be created in the Concrete Classes 
+
+void Soldiers::prepare()
+{
+
+}
+
+
+void Soldiers::execute()
+{
+
+}
+
+
+void Soldiers::retreat()
+{
+
+}
+
+
+void Soldiers::rest()
+{
+   
+}
+
+
+void Soldiers::takeDamage(int totalDamage) 
+{
+
+        int damageAfterDefence = totalDamage - (this->getdefencePerSoldier() * this->getamountOfSoldiersPerUnit());
+        if (damageAfterDefence > 0) {
+            int soldiersLost = damageAfterDefence / this->gethealthPerSoldier();
+            int newAmount = this->getamountOfSoldiersPerUnit() - soldiersLost;
+
+            // Ensure the number of soldiers doesn't go below 0
+            if (newAmount < 0) {
+                this->setAmountOfSoldiersPerUnit(0);
+            } else {
+                this->setAmountOfSoldiersPerUnit(newAmount);
+            }
+        }
+    }
+
+void Soldiers::attack(Soldiers* target) 
+{
+    if (target) {  // Ensure the target pointer is valid
+            int totalDamage = this->getdamagePerSoldier() * this->getamountOfSoldiersPerUnit();
+            target->takeDamage(totalDamage);  // Pass the totalDamage as an int
+        }
+}
+
+    void Soldiers::checkStatus() const {
+        std::cout << getunitName() << " unit has " << getamountOfSoldiersPerUnit() << " soldiers remaining.\n";
+    }

@@ -19,7 +19,7 @@ Soldiers* InfantryFactory:: createUnit()
 
 int InfantryFactory::calculateTotalHealthPerUnit() const 
 {
-    Infantry newInfantry(100, 50, 10, 30, "Infantry");
+    Infantry newInfantry;
     return newInfantry.gethealthPerSoldier()  * newInfantry.getamountOfSoldiersPerUnit();
 
 }
@@ -27,13 +27,13 @@ int InfantryFactory::calculateTotalHealthPerUnit() const
 
 int InfantryFactory::calculateTotalDamagePerUnit() const
 {
-     Infantry newInfantry(100, 50, 10, 30, "Infantry");
+     Infantry newInfantry;
     return newInfantry.getdamagePerSoldier()  * newInfantry.getamountOfSoldiersPerUnit();
 }
 
 
 int InfantryFactory:: calculateTotalDefencePerUnit() const
 {
-    Infantry newInfantry(100, 50, 10, 30, "Infantry");
+    Infantry newInfantry;
     return newInfantry.getdefencePerSoldier()  * newInfantry.getamountOfSoldiersPerUnit();
 } 

@@ -19,7 +19,7 @@ void Caretaker:: addMemento(Memento *memento)
 
 Memento* Caretaker:: getMemento(int index) const
 {
-    if (index < 0 || index >= mementos.size())
+    if (index < 0 || index >= static_cast<int>(mementos.size()))
     {
         return nullptr;
     }

@@ -1,5 +1,5 @@
-#ifndef SHIELDBEARERFACTORY_H;
-#define SHIELDBEARERFACTORY_H;
+#ifndef SHIELDBEARERFACTORY_H
+#define SHIELDBEARERFACTORY_H
 
 #include <iostream>
 #include <string>
@@ -24,4 +24,4 @@ class ShieldBearerFactory: public SoldierFactory
 
 
 };
-#endif;
+#endif

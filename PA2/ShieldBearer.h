@@ -22,6 +22,14 @@ class ShieldBearer: public Soldiers
       ShieldBearer(int health, int damage, int amount, int defence, const string& name);
       Soldiers* clonis() override;
       ShieldBearer();
+      ShieldBearer(int healthPerSoldier, int defencePerSoldier);
+
+      void engage();
+      void disengage();
+      void prepare();
+      void execute();
+      void retreat();
+      void rest();
 
 };
 #endif
